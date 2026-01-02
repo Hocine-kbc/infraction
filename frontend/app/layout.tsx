@@ -32,7 +32,7 @@ export default function RootLayout({
         {/* Footer */}
         <footer className="app-footer">
           <p className="footer-text">
-            © {new Date().getFullYear()} — Projet universitaire
+            © 2024 — Projet universitaire
           </p>
         </footer>
 
