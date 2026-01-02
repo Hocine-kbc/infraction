@@ -16,9 +16,60 @@
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background: radial-gradient(circle at top, #020617, #000);
+  color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.app-header {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 0;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  display: block;
+}
+
+/* Main content */
+.app-main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Footer */
+.app-footer {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2rem 0;
+  margin-top: auto;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.footer-text {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 /* Leaflet CSS */

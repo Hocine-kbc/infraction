@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface Response {
   message: string;
@@ -30,6 +30,22 @@ export default function ReportCard({ report, onSendResponse }: ReportCardProps) 
     setResponseText("");
   };
 
+  // Récupérer l'ID utilisateur depuis le token
+  const getUserId = () => {
+    const token = localStorage.getItem("token");
+    if (!token) return null;
+    try {
+      const payload = JSON.parse(atob(token.split(".")[1]));
+      return payload.id;
+    } catch {
+      return null;
+    }
+  };
+
+  const userId = getUserId();
+  const sentComments = report.responses?.filter((r) => r.adminId === userId) || [];
+  const receivedResponses = report.responses?.filter((r) => r.adminId !== userId) || [];
+
   return (
     <div className="user-report-card mb-4">
       {/* Type et infos principales */}
@@ -52,12 +68,27 @@ export default function ReportCard({ report, onSendResponse }: ReportCardProps) 
         </div>
       </div>
 
-      {/* Réponses */}
-      {report.responses && report.responses.length > 0 && (
+      {/* Commentaires envoyés */}
+      {sentComments.length > 0 && (
         <div className="user-responses mt-4">
-          <h4>Réponses :</h4>
+          <h4>Mes commentaires envoyés :</h4>
           <ul>
-            {report.responses.map((r, idx) => (
+            {sentComments.map((r, idx) => (
+              <li key={idx}>
+                {r.message}
+                <span>    {new Date(r.date).toLocaleString()}    </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Réponses reçues */}
+      {receivedResponses.length > 0 && (
+        <div className="user-responses mt-4">
+          <h4>Réponses reçues :</h4>
+          <ul>
+            {receivedResponses.map((r, idx) => (
               <li key={idx}>
                 {r.message}
                 <span>    {new Date(r.date).toLocaleString()}    </span>

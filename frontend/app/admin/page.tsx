@@ -94,12 +94,9 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="admin-dashboard-container">
-      <div className="mb-6" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <div className="admin-nav-container">
         <Link href="/">
-          <button className="btn-back">Retour à l'accueil</button>
-        </Link>
-        <Link href="/reports">
-          <button className="btn-view-reports">Voir les signalements</button>
+          <button className="btn-back">Retour à l&apos;accueil</button>
         </Link>
       </div>
 

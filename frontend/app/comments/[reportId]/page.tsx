@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
+import "./comments.css";
 
 
 interface Comment {
@@ -13,7 +14,6 @@ interface Comment {
 
 export default function CommentsPage() {
   const { reportId } = useParams();
-  const router = useRouter();
 
   const [comments, setComments] = useState<Comment[]>([]);
   const [content, setContent] = useState("");
@@ -84,33 +84,33 @@ export default function CommentsPage() {
     }
   };
 
-  if (!token) return <p className="p-6">Vous devez être connecté.</p>;
+  if (!token) return <p className="comments-auth-message">Vous devez être connecté.</p>;
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow">
+    <div className="comments-page">
       <Link href="/reports">
-        <button className="mb-4 text-sm text-blue-600 hover:underline">
+        <button className="comments-back-btn">
           ← Retour aux signalements
         </button>
       </Link>
 
-      <h2 className="text-2xl font-bold mb-4">Commentaires</h2>
+      <h2 className="comments-title">Commentaires</h2>
 
-      {loading && <p>Chargement...</p>}
-      {error && <p className="text-red-600">{error}</p>}
+      {loading && <p className="comments-loading">Chargement...</p>}
+      {error && <p className="comments-error">{error}</p>}
 
-      <ul className="space-y-3 mb-6">
+      <ul className="comments-list">
         {comments.map((c) => (
-          <li key={c._id} className="border p-3 rounded">
-            <p>{c.content}</p>
-            <p className="text-xs text-gray-400">
+          <li key={c._id} className="comment-item">
+            <p className="comment-content">{c.content}</p>
+            <p className="comment-date">
               {new Date(c.createdAt).toLocaleString()}
             </p>
 
             {/* Bouton admin */}
             <button
               onClick={() => handleDelete(c._id)}
-              className="text-red-600 text-xs mt-1 hover:underline"
+              className="comment-delete-btn"
             >
               Supprimer
             </button>
@@ -118,17 +118,17 @@ export default function CommentsPage() {
         ))}
       </ul>
 
-      <div className="space-y-2">
+      <div className="comments-form">
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-full border rounded p-2"
+          className="comments-textarea"
           placeholder="Ajouter un commentaire..."
         />
 
         <button
           onClick={handleAddComment}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="comments-submit-btn"
         >
           Ajouter
         </button>
