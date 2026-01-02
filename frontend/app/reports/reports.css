@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+
+/* ===== PAGE ===== */
+.reports-page {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 48px;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  border-radius: 28px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== TITRE ===== */
+.reports-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #0f172a;
+}
+
+/* ===== RETOUR ===== */
+.btn-back-home {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1e3a8a;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 2px solid #e0e7ff;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+}
+
+.btn-back-home:hover {
+  background: #ffffff;
+  border-color: #2563eb;
+  transform: translateX(-4px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  text-decoration: none;
+  color: #1e40af;
+}
+
+/* ===== LISTE ===== */
+.reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* ===== CARTE SIGNALMENT ===== */
+.report-wrapper {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+
+.report-wrapper:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.25);
+  transform: translateY(-6px);
+}
+
+/* ===== INFRACTIONS (ReportCard) ===== */
+.info-card {
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+  border-radius: 18px;
+  padding: 20px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  transition: all 0.35s ease;
+  border: 1px solid #e0e7ff;
+}
+
+.info-card:hover {
+  background: linear-gradient(135deg, #dbeafe, #ffffff);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.25);
+}
+
+/* LABEL */
+.info-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #475569;
+}
+
+/* VALEUR */
+.info-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  text-align: right;
+}
+
+/* ===== COMMENTAIRES ===== */
+.comments-link-wrapper {
+  margin-top: 26px;
+  text-align: right;
+}
+
+.comments-link {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.comments-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.45);
+}
+
+/* ===== ERREUR ===== */
+.reports-error {
+  text-align: center;
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* ===== RÉPONSES ===== */
+.user-responses {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e0e7ff;
+}
+
+.user-responses h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.user-responses ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-responses li {
+  background: linear-gradient(135deg, #eff6ff, #ffffff);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  border: 1px solid #e0e7ff;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.user-responses li span {
+  display: block;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* ===== CHAMP DE RÉPONSE ===== */
+.user-response-input {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e0e7ff;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.user-response-input input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border-radius: 12px;
+  border: 2px solid #e0e7ff;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 0.95rem;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.user-response-input input::placeholder {
+  color: #94a3b8;
+}
+
+.user-response-input input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: #f8fafc;
+}
+
+.user-response-input button {
+  padding: 0.875rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.user-response-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+}
+
+.user-response-input button:active {
+  transform: translateY(0);
+}
